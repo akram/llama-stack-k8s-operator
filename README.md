@@ -58,7 +58,10 @@ Deploy Ollama with other model:
 
 **vLLM Examples:**
 
-This would require a secret "hf-token-secret" in namespace "vllm-dist" for HuggingFace token (required for downloading models) to be created in advance.
+This would require a secret "hf-token-secret" with a key named "token" in namespace "vllm-dist" for HuggingFace token (required for downloading models) to be created in advance.
+```
+kubectl create -n vllm-dist secret generic hf-token-secret  --from-literal=token=hf_tokentokentokentoken
+```
 
 Deploy vLLM with default model (meta-llama/Llama-3.2-1B):
 ```bash
